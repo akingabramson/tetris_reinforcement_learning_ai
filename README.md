@@ -1,5 +1,7 @@
 # Tetris AI
 
+![Tetris AI GIF](./tetris_ai.GIF)
+
 A tetris AI implemented using q-learning, a type of reinforcement learning.
 
 The AI is mine, but the tetris game is not.  Credit to Kevin Chabowski for the tetris game.
