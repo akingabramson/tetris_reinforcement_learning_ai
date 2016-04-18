@@ -340,15 +340,21 @@ Press space to continue""" % self.score)
                     elif event.type == pygame.QUIT:
                         self.quit()
                     elif event.type == pygame.KEYDOWN:
-                        for key in key_actions:
+                        for key in self.key_actions:
                             if event.key == eval("pygame.K_"
                             +key):
-                                key_actions[key]()
+                                self.key_actions[key]()
 
             if show_board: dont_burn_my_cpu.tick(maxfps)
 
-if __name__ == '__main__':
+def play(computer_player=True):
     App = TetrisApp()
-    # App.run(False, True)
-    reinforcement_learner = TetrisReinforcementLearner(App)
-    reinforcement_learner.train()
+
+    if computer_player:
+        reinforcement_learner = TetrisReinforcementLearner(App)
+        reinforcement_learner.train()
+    else:
+        App.run(False, True)
+
+if __name__ == '__main__': play(False)
+
