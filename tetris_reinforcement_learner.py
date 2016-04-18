@@ -172,8 +172,8 @@ class TetrisReinforcementLearner:
     def get_legal_action_sequences(self, state):
         move_sequences = self.get_move_sequences_for_each_rotation(state)
         legal_action_sequences = self.translate_moves_into_actions(move_sequences)
-        if not legal_action_sequences: legal_action_sequences = [["CONTINUE"]]
 
+        if not legal_action_sequences: legal_action_sequences = [["CONTINUE"]]
         return legal_action_sequences
 
     def square_is_zero(self, square):
