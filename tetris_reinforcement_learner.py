@@ -179,16 +179,6 @@ class TetrisReinforcementLearner:
     def square_is_zero(self, square):
         square == 0
 
-    def dont_have_to_move_yet(self, state):
-        board = state['board']
-        row_index_below_stone = state['stone_y'] + len(state['stone']) + 3
-
-        if row_index_below_stone >= len(board): return False
-        row_below_stone = board[row_index_below_stone]
-
-        zeroes = map(lambda square: square == 0, row_below_stone)
-        return all(zeroes)
-
     def prune_action_sequence(self, action_sequence):
         pruned_action_sequence = []
 
@@ -259,8 +249,7 @@ class TetrisReinforcementLearner:
         top_q_value_pair = self.get_top_q_value_pair(state, shuffled_action_sequences)
 
         best_action_sequence = top_q_value_pair[1]
-        # if random.random() < self.epsilon: best_action_sequence = random.choice(shuffled_action_sequences)
-        # return self.split_action_sequence(best_action_sequence)
+
         return self.prune_action_sequence(best_action_sequence)
 
     def get_max_q_value(self, state):
