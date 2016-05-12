@@ -356,5 +356,5 @@ def play(computer_player=True):
     else:
         App.run(False, True)
 
-if __name__ == '__main__': play(False)
+if __name__ == '__main__': play(True)
 

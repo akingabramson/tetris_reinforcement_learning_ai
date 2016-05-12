@@ -6,6 +6,10 @@ A tetris AI implemented using q-learning, a type of reinforcement learning.
 
 The AI is mine, but the tetris game is not.  Credit to Kevin Chabowski for the tetris game.
 
+## Installation
+
+`pip install pygame`
+
 ## Usage
 
 Run `python tetris.py` to see the AI in action.
